@@ -1,0 +1,17 @@
+package com.learn.springboot.messaging;
+
+import org.springframework.jms.annotation.JmsListener;
+import org.springframework.stereotype.Component;
+
+/**
+ * https:///v=zaCXYkzLgJc
+ */
+@Component
+public class Receiver {
+
+    @JmsListener(destination = "standalone.queue")
+    public void consume(String message) {
+        System.out.println("Received " + message);
+    }
+
+}
