@@ -6,6 +6,7 @@
 	<modules>
 		<module>SpringActiveMq</module>
 		<module>AppMain</module>
+		<module>JavaCore</module>
 	</modules>
 	<parent>
 		<groupId>com.learn.springboot</groupId>

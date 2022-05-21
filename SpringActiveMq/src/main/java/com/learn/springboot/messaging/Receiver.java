@@ -14,4 +14,9 @@ public class Receiver {
         System.out.println("Received " + message);
     }
 
+    @JmsListener(destination = "standalone.queue")
+    public void consume1(String message) {
+        System.out.println("Received-1 " + message);
+    }
+
 }
