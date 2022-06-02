@@ -7,12 +7,14 @@
 		<module>SpringActiveMq</module>
 		<module>AppMain</module>
 		<module>JavaCore</module>
+        <module>ElasticSearchPlay</module>
+		<module>SuperPom</module>
 	</modules>
 	<parent>
 		<groupId>com.learn.springboot</groupId>
-		<artifactId>AppMain</artifactId>
+		<artifactId>SuperPom</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>AppMain/pom.xml</relativePath> <!-- lookup parent from repository -->
+		<relativePath>SuperPom/pom.xml</relativePath> <!-- lookup parent from repository -->
 	</parent>
 
 	<groupId>com.learn.springboot</groupId>
@@ -23,6 +25,7 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+
 
 
 	<build>
