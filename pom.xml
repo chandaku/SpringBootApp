@@ -5,7 +5,6 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>SpringActiveMq</module>
-		<module>AppMain</module>
 		<module>JavaCore</module>
         <module>ElasticSearchPlay</module>
 		<module>SuperPom</module>
