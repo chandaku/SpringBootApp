@@ -8,7 +8,8 @@
 		<module>JavaCore</module>
         <module>ElasticSearchPlay</module>
 		<module>SuperPom</module>
-	</modules>
+        <module>KafkaPlay</module>
+    </modules>
 	<parent>
 		<groupId>com.learn.springboot</groupId>
 		<artifactId>SuperPom</artifactId>
