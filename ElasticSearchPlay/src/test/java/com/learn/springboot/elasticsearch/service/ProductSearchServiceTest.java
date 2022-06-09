@@ -2,20 +2,41 @@ package com.learn.springboot.elasticsearch.service;
 
 import com.learn.springboot.Main;
 import com.learn.springboot.elasticsearch.domain.Product;
-import org.apache.lucene.document.IntRange;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import com.learn.springboot.EmbededElasticSearchContainer;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.testcontainers.elasticsearch.ElasticsearchContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(classes = Main.class)
-class ProductSearchServiceTest {
+
+@Testcontainers
+@ExtendWith(SpringExtension.class)
+@SpringBootTest( classes = Main.class)
+public class ProductSearchServiceTest {
+
+    @Container
+    private static ElasticsearchContainer elasticsearchContainer = new EmbededElasticSearchContainer();
+
+    @BeforeAll
+    static void setUp() {
+        elasticsearchContainer.start();
+    }
+
+    @BeforeEach
+    void testIsContainerRunning() {
+        assertTrue(elasticsearchContainer.isRunning());
+    }
+
 
     @Autowired
     ProductSearchService productSearchService;
@@ -50,6 +71,11 @@ class ProductSearchServiceTest {
         p.setQuantity(1000);
         p.setDescription("Checking description");
         return p;
+    }
+
+    @AfterAll
+    static void destroy() {
+        elasticsearchContainer.stop();
     }
 
 }
