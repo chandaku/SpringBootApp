@@ -9,6 +9,7 @@
         <module>ElasticSearchPlay</module>
 		<module>SuperPom</module>
         <module>KafkaPlay</module>
+        <module>GeneralSpringBoot</module>
     </modules>
 	<parent>
 		<groupId>com.learn.springboot</groupId>
