@@ -4,7 +4,7 @@ import org.testcontainers.elasticsearch.ElasticsearchContainer;
 
 public class EmbededElasticSearchContainer extends ElasticsearchContainer {
 
-    private static final String ELASTIC_SEARCH_DOCKER = "elasticsearch:6.4.3";
+    private static final String ELASTIC_SEARCH_DOCKER = "docker.elastic.co/elasticsearch/elasticsearch:7.15.2-amd64";
 
     private static final String CLUSTER_NAME = "cluster.name";
 
