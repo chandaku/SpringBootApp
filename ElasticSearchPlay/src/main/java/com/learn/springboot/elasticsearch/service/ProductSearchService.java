@@ -23,17 +23,17 @@ public class ProductSearchService {
         this.elasticsearchOperations = elasticsearchOperations;
     }
 
-    public List<String> createProductIndexBulk
-            (final List<Product> products) {
+    public List<String> createProductIndexBulk(final List<Product> products) {
 
         List<IndexQuery> queries = products.stream()
-                .map(product->
+                .map(product ->
                         new IndexQueryBuilder()
                                 .withId(product.getId().toString())
                                 .withObject(product).build())
-                .collect(Collectors.toList());;
+                .collect(Collectors.toList());
+        ;
 
-        List<IndexedObjectInformation> indexedObjectInformations =  elasticsearchOperations
+        List<IndexedObjectInformation> indexedObjectInformations = elasticsearchOperations
                 .bulkIndex(queries, IndexCoordinates.of(PRODUCT_INDEX));
 
         return indexedObjectInformations.stream()

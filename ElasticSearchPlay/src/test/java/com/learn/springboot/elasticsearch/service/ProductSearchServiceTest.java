@@ -19,6 +19,7 @@ import java.util.stream.IntStream;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
+@Disabled
 @Testcontainers
 @ExtendWith(SpringExtension.class)
 @SpringBootTest( classes = Main.class)
