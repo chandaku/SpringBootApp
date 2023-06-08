@@ -11,7 +11,8 @@
         <module>KafkaPlay</module>
         <module>GeneralSpringBoot</module>
 		<module>CucumberPlay</module>
-	</modules>
+        <module>MongoPlay</module>
+    </modules>
 	<parent>
 		<groupId>com.learn.springboot</groupId>
 		<artifactId>SuperPom</artifactId>

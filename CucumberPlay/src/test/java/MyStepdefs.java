@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class MyStepdefs {
 
     @When("^the client calls /version$")
-    public void the_client_issues_GET_version() throws Throwable{
+    public void the_client_issues_GET_version() throws Throwable {
     }
 
     @Then("the client receives status code of {int}")
